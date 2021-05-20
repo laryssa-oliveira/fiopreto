@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">FioPreto</string>
+
+
+    <!--- Introduction -->
+    <string name="intro_title">Boas-vindas ao Fio Preto!</string>
+    <string name="intro_subtitle">Através da aceitação estética, queremos incentivar pessoas pretas a construirem:</string>
+    <string name="intro_topics"> • Autoestima <br></br> • Autonomia estética <br></br> • Empoderamento</string>
+    <string name="intro_txt">Acreditamos que através dessa mentalidade podemos apoiar pessoas negras a alcançarem espaços no mundo!</string>
+    <string name="intro_button"> Quero começar </string>
+
+    <!--- Register -->
+    <string name="register_title">Crie uma conta</string>
+    <string name="hint_name">Nome</string>
+    <string name="hint_date">Data de nascimento</string>
+    <string name="hint_email">E-mail</string>
+    <string name="hint_password">Senha</string>
+    <string name="register_button"> Cadastrar </string>
+
+    <!--- Login -->
+    <string name="login_title"> Faça login para começar </string>
+    <string name="login_button"> Fazer login </string>
+    <string name="login_signup">É novo aqui? <br></br> Cadastre-se para começar!</string>
+    <string name="forget_password">Esqueceu sua senha?</string>
+    <string name="skip">Pular</string>
+
+    <!--- Menu -->
+    <string name="home">Home</string>
+    <string name="tips">Dicas</string>
+    <string name="feed">Feed</string>
+    <string name="salon">Salões</string>
+    <string name="profile">Perfil</string>
+</resources>
