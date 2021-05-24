@@ -1,4 +1,4 @@
-package com.example.fiopreto
+package com.example.fiopreto.data.remote
 
 sealed class ResultWrapper<out Type>(
     val data: Type? = null,

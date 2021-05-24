@@ -12,12 +12,16 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.FioPreto">
-        <activity android:name="com.example.fiopreto.ui.MainActivity">
+        <activity android:name="com.example.fiopreto.ui.SplashActivity"
+            android:theme="@style/Theme.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+        <activity android:name="com.example.fiopreto.ui.MainActivity">
         </activity>
         <meta-data
             android:name="preloaded_fonts"

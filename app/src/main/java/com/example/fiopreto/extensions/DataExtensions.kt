@@ -1,7 +1,7 @@
 package com.example.fiopreto.extensions
 
-import com.example.fiopreto.ResultWrapper
-import com.example.fiopreto.ResultWrapper.*
+import com.example.fiopreto.data.remote.ResultWrapper
+import com.example.fiopreto.data.remote.ResultWrapper.*
 import retrofit2.Response
 
 suspend fun <T> wrapResponse(

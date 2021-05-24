@@ -20,9 +20,10 @@
     <!--- Login -->
     <string name="login_title"> Faça login para começar </string>
     <string name="login_button"> Fazer login </string>
-    <string name="login_signup">É novo aqui? <br></br> Cadastre-se para começar!</string>
-    <string name="forget_password">Esqueceu sua senha?</string>
+    <string name="login_register">É novo aqui? Cadastre-se para começar!</string>
+    <string name="forget_password"><u>Esqueceu sua senha?</u></string>
     <string name="skip">Pular</string>
+    <string name="login_reg_button"><u>Cadastre-se</u></string>
 
     <!--- Menu -->
     <string name="home">Home</string>
@@ -30,4 +31,8 @@
     <string name="feed">Feed</string>
     <string name="salon">Salões</string>
     <string name="profile">Perfil</string>
+
+    <!--- Feed -->
+    <string name="phrase_feed">Inspire <b>pessoas</b></string>
+
 </resources>
