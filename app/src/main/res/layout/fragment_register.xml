@@ -127,6 +127,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@id/layoutEmail"
         app:layout_constraintEnd_toEndOf="@id/layoutEmail"
+        app:passwordToggleEnabled="true"
         >
 
         <com.google.android.material.textfield.TextInputEditText

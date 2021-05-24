@@ -59,7 +59,7 @@ class LoginFragment : Fragment() {
 
 
             findNavController().navigate(
-            LoginFragmentDirections.actionLoginFragmentToHomeFragment())
+            LoginFragmentDirections.actionLoginFragmentToIntroFragment())
     }
 
 }
