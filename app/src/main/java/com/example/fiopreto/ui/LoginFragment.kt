@@ -1,5 +1,7 @@
 package com.example.fiopreto.ui
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -12,6 +14,7 @@ import com.example.fiopreto.login.LoginRequest
 import com.example.fiopreto.R
 import com.example.fiopreto.login.LoginService
 import com.google.android.material.textfield.TextInputEditText
+import kotlinx.android.synthetic.main.fragment_login.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -22,6 +25,8 @@ class LoginFragment : Fragment() {
     private lateinit var button: AppCompatButton
     private lateinit var edtEmail: TextInputEditText
     private lateinit var edtPassword: TextInputEditText
+    private lateinit var buttonReg: AppCompatButton
+    private lateinit var layoutPassword: TextInputEditText
     
 
     override fun onCreateView(
@@ -37,6 +42,13 @@ class LoginFragment : Fragment() {
         button = view.findViewById(R.id.login_button)
         edtEmail = view.findViewById(R.id.loginEdtEmail)
         edtPassword = view.findViewById(R.id.loginEdtPassword)
+        buttonReg = view.findViewById(R.id.login_reg_button)
+        //layoutPassword = view.findViewById(R.id.layoutEdtPassword)
+
+        /*
+        if(edtEmail.text.toString().isEmpty()){
+            layoutPassword.setError("*Credenciais incorretas")
+        }*/
 
         button.setOnClickListener{
             CoroutineScope(Dispatchers.Main).launch {
@@ -47,19 +59,32 @@ class LoginFragment : Fragment() {
                 )
                 )
                 handleLogin(response)
+
             }
 
         }
 
+        buttonReg.setOnClickListener{
+            findNavController().navigate(
+                LoginFragmentDirections.actionLoginFragmentToIntroFragment()
+            )
+        }
+
     }
 
-    private fun handleLogin(response: Response<Unit>) {
-        if(response.isSuccessful)
-            Log.d("LOGIN","header token ${response.headers().get("token")}")
-
+    fun handleLogin(response: Response<Unit>) {
+        if(response.isSuccessful) {
+            val changePage = Intent(requireActivity(), HomeActivity::class.java)
+            startActivity(changePage)
 
             findNavController().navigate(
-            LoginFragmentDirections.actionLoginFragmentToIntroFragment())
+                LoginFragmentDirections.actionLoginFragmentToHomeGraph()
+            )
+
+            Log.d("Login", "header token ${response.headers().get("token")}")
+
+        }
+
     }
 
 }

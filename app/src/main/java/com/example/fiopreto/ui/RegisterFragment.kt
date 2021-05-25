@@ -1,5 +1,6 @@
 package com.example.fiopreto.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -16,6 +17,10 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import retrofit2.Response
+import java.text.DateFormat
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
+import java.util.*
 
 class RegisterFragment : Fragment() {
 
@@ -47,7 +52,7 @@ class RegisterFragment : Fragment() {
                 val response = RegisterService.newInstance().register(
                     RegisterRequest(
                         name = regName.text.toString(),
-                        dob = regDob.text.toString(),
+                        dob = regDob.editableText.toString(),
                         email = regEmail.text.toString(),
                         password = regPassword.text.toString()
                     )
@@ -60,11 +65,13 @@ class RegisterFragment : Fragment() {
     }
 
     private fun handleRegister(response: Response<Unit>) {
-        if(response.isSuccessful)
-            Log.d("LOGIN","header token ${response.headers().get("token")}")
-
-
-        findNavController().navigate(
-            RegisterFragmentDirections.actionRegisterFragmentToHomeFragment())
+        if(response.isSuccessful) {
+            Log.d("LOGIN", "header token ${response.headers().get("token")}")
+            val changePage = Intent(requireContext(), HomeActivity::class.java)
+            startActivity(changePage)
+            findNavController().navigate(
+                RegisterFragmentDirections.actionRegisterFragmentToHomeGraph()
+            )
+        }
     }
 }

@@ -5,7 +5,9 @@
     <!--- Introduction -->
     <string name="intro_title">Boas-vindas ao Fio Preto!</string>
     <string name="intro_subtitle">Através da aceitação estética, queremos incentivar pessoas pretas a construirem:</string>
-    <string name="intro_topics"> • Autoestima <br></br> • Autonomia estética <br></br> • Empoderamento</string>
+    <string name="intro_topic1"> • Autoestima </string>
+    <string name="intro_topic2"> • Autonomia estética </string>
+    <string name="intro_topic3"> • Empoderamento </string>
     <string name="intro_txt">Acreditamos que através dessa mentalidade podemos apoiar pessoas negras a alcançarem espaços no mundo!</string>
     <string name="intro_button"> Quero começar </string>
 
