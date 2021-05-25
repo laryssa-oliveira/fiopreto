@@ -12,6 +12,9 @@
         <action
             android:id="@+id/action_loginFragment_to_introFragment"
             app:destination="@id/introFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_home_graph"
+            app:destination="@id/home_graph" />
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
@@ -19,8 +22,8 @@
         android:label="fragment_register"
         tools:layout="@layout/fragment_register" >
         <action
-            android:id="@+id/action_registerFragment_to_feedFragment"
-            app:destination="@id/feedFragment" />
+            android:id="@+id/action_registerFragment_to_home_graph"
+            app:destination="@id/home_graph" />
     </fragment>
     <fragment
         android:id="@+id/introFragment"
@@ -31,9 +34,5 @@
             android:id="@+id/action_introFragment_to_registerFragment"
             app:destination="@id/registerFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/feedFragment"
-        android:name="com.example.fiopreto.ui.FeedFragment"
-        android:label="fragment_feed"
-        tools:layout="@layout/fragment_feed" />
+    <include app:graph="@navigation/home_graph" />
 </navigation>
