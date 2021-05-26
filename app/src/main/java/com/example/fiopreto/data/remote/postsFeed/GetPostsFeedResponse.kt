@@ -5,6 +5,6 @@ import com.google.gson.annotations.SerializedName
 
 data class GetPostsFeedResponse (
 
-    @SerializedName("posts")
+    @SerializedName("data")
     val feedResp: List<FeedResponse>
 )

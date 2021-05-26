@@ -11,9 +11,9 @@ import java.util.concurrent.TimeUnit
 
 interface FeedService {
 
-    @GET("image/")
+    @GET("post/")
     suspend fun getPostsFeed(
-        @Header("access-token") accessToken: String,
+        @Header("Authorization") authorization: String,
        // @Header("client") client: String,
        // @Header("uid") uid: String
     ): Response<GetPostsFeedResponse>

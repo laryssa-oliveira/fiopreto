@@ -7,11 +7,11 @@ data class FeedResponse (
     @SerializedName("id")
     val id: Int,
 
-    //@SerializedName("enterprise_name")
-    //val enterpriseName: String,
+    @SerializedName("text")
+    val name: String,
 
-    @SerializedName("image")
-    val photo: String,
+    @SerializedName("img")
+    val photo: String
 
     /*
 
