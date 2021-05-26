@@ -5,6 +5,8 @@ import com.example.fiopreto.data.local.LocalModelMappers.fromLocalModel
 import com.example.fiopreto.data.local.LocalModelMappers.toLocalModel
 import com.example.fiopreto.data.Constants.KEY_ACCESS_TOKEN
 import com.example.fiopreto.data.Constants.HEADER_ACCESS_TOKEN
+import com.example.fiopreto.data.Constants.HEADER_AUTHORIZATION
+import com.example.fiopreto.data.Constants.KEY_AUTHORIZATION
 import okhttp3.Headers
 
 class LocalDataSourceImpl(
@@ -23,6 +25,7 @@ class LocalDataSourceImpl(
         sharedPreferences.apply {
             val editor = edit()
             editor.putString(KEY_ACCESS_TOKEN, headers[HEADER_ACCESS_TOKEN])
+            editor.putString(KEY_AUTHORIZATION, headers[HEADER_AUTHORIZATION])
             //editor.putString(KEY_CLIENT, headers[HEADER_CLIENT])
             //editor.putString(KEY_UID, headers[HEADER_UID])
             editor.apply()
@@ -31,10 +34,12 @@ class LocalDataSourceImpl(
 
     override fun getHeadersFromPreferences() = sharedPreferences.run {
         val token = getString(KEY_ACCESS_TOKEN, "") ?: ""
+        val authorization = getString(KEY_AUTHORIZATION, "") ?: ""
         //val client = getString(KEY_CLIENT, "") ?: ""
         //val uid = getString(KEY_UID, "") ?: ""
         Headers.Builder()
             .add(HEADER_ACCESS_TOKEN, token)
+            .add(HEADER_AUTHORIZATION, authorization)
             //.add(HEADER_CLIENT, client)
             //.add(HEADER_UID, uid)
             .build()

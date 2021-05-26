@@ -1,23 +1,35 @@
 package com.example.fiopreto.ui
 
 import android.os.Bundle
+import android.text.method.ScrollingMovementMethod
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.widget.AppCompatImageView
+import androidx.appcompat.widget.AppCompatTextView
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.example.fiopreto.PostFeed
 import com.example.fiopreto.R
 import com.example.fiopreto.presentation.FeedViewModel
 import com.example.fiopreto.presentation.ViewState
+import kotlinx.android.synthetic.main.item_post_feed.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class FeedFragment : Fragment() {
 
+    //private val args: FeedFragmentArgs by navArgs()
+
     private val adapter by lazy { PostFeedAdapter(::clickItem) }
     private lateinit var recyclerView: RecyclerView
     private val feedViewModel by viewModel<FeedViewModel>()
+
+    //private lateinit var namePerson: AppCompatTextView
+    //private lateinit var imageView: AppCompatImageView
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -32,8 +44,11 @@ class FeedFragment : Fragment() {
         recyclerView = view.findViewById(R.id.recyclerViewFeed)
         recyclerView.adapter = adapter
         feedViewModel.getPostsFeed()
+        //imageView = view.findViewById(R.id.image_feed)
+        //namePerson = view.findViewById(R.id.personName)
 
         setObservers()
+        //setImageContent()
     }
 
 
@@ -65,6 +80,26 @@ class FeedFragment : Fragment() {
     private fun onResultError(error: Throwable?) {
         Toast.makeText(requireContext(), error?.message?: "", Toast.LENGTH_LONG).show()
     }
+
+    /*private fun configureView() {
+        namePerson.text = args.name
+        namePerson.movementMethod = ScrollingMovementMethod()
+        //companyName.text = args.name
+        //descriptionCompany.text = args.description
+        //descriptionCompany.movementMethod = ScrollingMovementMethod()
+        setImageContent()
+    }
+
+
+    private fun setImageContent() {
+        Glide
+            .with(this)
+            .load("https://thispersondoesnotexist.com/image")
+            .placeholder(R.drawable.logo)
+            .diskCacheStrategy(DiskCacheStrategy.NONE)
+            .skipMemoryCache(true)
+            .into(imageView)
+    }*/
 
 
     private fun clickItem(postFeed: PostFeed) {
