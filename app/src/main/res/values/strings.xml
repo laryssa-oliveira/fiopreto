@@ -4,12 +4,16 @@
 
     <!--- Introduction -->
     <string name="intro_title">Boas-vindas ao Fio Preto!</string>
-    <string name="intro_subtitle">Através da aceitação estética, queremos incentivar pessoas pretas a construirem:</string>
-    <string name="intro_topic1"> • Autoestima </string>
-    <string name="intro_topic2"> • Autonomia estética </string>
+    <string name="intro_txt">Vamos começar essa jornada de autonomia estética juntos?</string>
+    <string name="intro_button"> Vamos começar </string>
+    <string name="intro_btn_next">Próximo</string>
+    <string name="intro_btn_back">Anterior</string>
+
+    <string name="intro2_txt">Inspire pessoas que buscam alcançar a sua autonomia estética.</string>
+    <string name="intro_feed">Feed</string>
+    <string name="intro3_txt">Compartilhe e receba dicas para cuidados com seu cabelo.</string>
+    <string name="intro4_txt">Faça agendamentos em salões focados em cabelos crespos e cacheados.</string>
     <string name="intro_topic3"> • Empoderamento </string>
-    <string name="intro_txt">Acreditamos que através dessa mentalidade podemos apoiar pessoas negras a alcançarem espaços no mundo!</string>
-    <string name="intro_button"> Quero começar </string>
 
     <!--- Register -->
     <string name="register_title">Crie uma conta</string>
@@ -36,5 +40,14 @@
 
     <!--- Feed -->
     <string name="phrase_feed">Inspire <b>pessoas</b></string>
+
+    <!--- Salon -->
+    <string name="phrase_salon">Cabelo bom é cabelo <b> bem cuidado</b></string>
+    <string name="phrase_find_salon"><b>Vamos localizar salões na sua cidade...</b></string>
+    <string name="find_salon">Selecione uma cidade</string>
+    <string name="schedule">Agendar</string>
+
+    <string name="search_Salon">Avançar</string>
+
 
 </resources>

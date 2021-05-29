@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    tools:context=".ui.UploadFeedActivity">
+
+    <ImageView
+        android:id="@+id/image_view_feed"
+        android:scaleType="centerCrop"
+        android:layout_width="400dp"
+        android:layout_height="400dp"
+        android:src="@drawable/ic_image"/>
+
+    <Button
+        android:id="@+id/pick_button_feed"
+        android:backgroundTint="@color/green"
+        android:text="Selecionar imagem"
+        android:textAllCaps="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/upload_feed"
+        android:backgroundTint="@color/green"
+        android:text="Upload"
+        android:textAllCaps="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>
