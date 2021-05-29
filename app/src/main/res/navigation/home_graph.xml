@@ -9,11 +9,7 @@
         android:id="@+id/homeFragment"
         android:name="com.example.fiopreto.ui.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" >
-        <action
-            android:id="@+id/action_homeFragment_to_feedFragment"
-            app:destination="@id/feedFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/feedFragment"
         android:name="com.example.fiopreto.ui.FeedFragment"
@@ -28,5 +24,19 @@
             app:argType="string"
             app:nullable="true" />
     </fragment>
+    <fragment
+        android:id="@+id/findSalonFragment"
+        android:name="com.example.fiopreto.ui.FindSalonFragment"
+        android:label="fragment_find_salon"
+        tools:layout="@layout/fragment_find_salon" >
+        <action
+            android:id="@+id/action_findSalonFragment_to_salonFragment"
+            app:destination="@id/salonFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/salonFragment"
+        android:name="com.example.fiopreto.ui.SalonFragment"
+        android:label="fragment_salon"
+        tools:layout="@layout/fragment_salon" />
 
 </navigation>

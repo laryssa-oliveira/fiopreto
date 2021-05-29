@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.AppCompatImageView
+import androidx.appcompat.widget.AppCompatTextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -22,6 +23,8 @@ class PostFeedAdapter(
 
     inner class PostsFeedViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(postFeed: PostFeed) {
+            itemView.findViewById<AppCompatTextView>(R.id.personName).text =
+                postFeed.name
             val imageView = itemView.findViewById<AppCompatImageView>(R.id.image_feed)
             itemView.setOnClickListener { callback.invoke(postFeed) }
 
