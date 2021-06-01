@@ -1,6 +1,6 @@
 package com.example.fiopreto.data.remote
 
-//import com.example.fiopreto.Addresses
+import com.example.fiopreto.Addresses
 import com.example.fiopreto.PostSalon
 import com.example.fiopreto.data.remote.postSalon.AddressesResponse
 import com.example.fiopreto.data.remote.postSalon.SalonResponse
@@ -10,12 +10,13 @@ fun SalonResponse.toModel(): PostSalon {
         id = id,
         name = name,
         site = site,
-        pathImage = photo,
-        //address = address.toModel()
+        phone = phone,
+        photo = photo,
+        address = address?.toModel()
     )
 }
 
-/*
+
 fun AddressesResponse.toModel(): Addresses {
     return Addresses(
         id = id,
@@ -26,4 +27,4 @@ fun AddressesResponse.toModel(): Addresses {
         city = city,
         state = state
     )
-}*/
+}

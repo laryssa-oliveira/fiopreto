@@ -128,42 +128,6 @@
         app:layout_constraintEnd_toEndOf="@id/layoutEdtPassword"
         app:layout_constraintTop_toBottomOf="@id/layoutEdtPassword"/>
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/txt_register"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="8dp"
-        android:autoSizeMinTextSize="8sp"
-        android:autoSizeTextType="uniform"
-        android:fontFamily="@font/montserrat"
-        android:text="@string/login_register"
-        android:textColor="@color/charcoalBlack"
-        android:textSize="15sp"
-        app:layout_constraintStart_toStartOf="@id/login_button"
-        app:layout_constraintEnd_toEndOf="@id/login_button"
-        app:layout_constraintTop_toBottomOf="@id/login_button"
-        />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/forget_login"
-        android:layout_width="wrap_content"
-        android:layout_height="24dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginStart="72dp"
-        android:layout_marginEnd="72dp"
-        android:text="@string/forget_password"
-        android:fontFamily="@font/montserrat"
-        android:textColor="@color/charcoalBlack"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        android:textAllCaps="false"
-        android:background="@color/white"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txt_register"
-        />
-
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/login_reg_button"
         android:layout_width="wrap_content"
@@ -179,7 +143,61 @@
         android:background="@color/white"
         app:layout_constraintTop_toBottomOf="@id/login_button"
         app:layout_constraintStart_toStartOf="@id/txt_register"
+        style="?android:attr/borderlessButtonStyle"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txt_register"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="8dp"
+        android:autoSizeMinTextSize="8sp"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="@font/montserrat"
+        android:text="@string/login_register"
+        android:textColor="@color/charcoalBlack"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="@id/login_button"
+        app:layout_constraintEnd_toStartOf="@id/login_reg_button"
+        app:layout_constraintTop_toBottomOf="@id/login_button"
         />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txt_register2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="4dp"
+        android:autoSizeMinTextSize="8sp"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="@font/montserrat"
+        android:text="@string/login_register2"
+        android:textColor="@color/charcoalBlack"
+        android:textSize="15sp"
+        app:layout_constraintStart_toEndOf="@id/login_reg_button"
+        app:layout_constraintEnd_toEndOf="@id/login_button"
+        app:layout_constraintTop_toBottomOf="@id/login_button"
+        />
+
+    <TextView
+        android:id="@+id/forget_login"
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginEnd="72dp"
+        android:text="@string/forget_password"
+        android:fontFamily="@font/montserrat"
+        android:textColor="@color/charcoalBlack"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:textAllCaps="false"
+        android:background="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_register" />
+
+
 
 
 

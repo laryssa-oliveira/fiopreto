@@ -35,15 +35,16 @@ class TipsFragment : Fragment() {
         recyclerView = view.findViewById(R.id.recyclerViewTips)
         recyclerView.adapter = adapter
         tipsViewModel.getPostsTips()
-        buttonUpload = view.findViewById(R.id.buttonTips)
+        //buttonUpload = view.findViewById(R.id.buttonTips)
 
 
         setObservers()
         //setImageContent()
-        buttonUpload.setOnClickListener {
+        /*buttonUpload.setOnClickListener {
             val intent = Intent(context, UploadTipsActivity::class.java)
             startActivity(intent)
         }
+         */
     }
 
 
@@ -75,26 +76,6 @@ class TipsFragment : Fragment() {
     private fun onResultError(error: Throwable?) {
         Toast.makeText(requireContext(), error?.message?: "", Toast.LENGTH_LONG).show()
     }
-
-    /*private fun configureView() {
-        namePerson.text = args.name
-        namePerson.movementMethod = ScrollingMovementMethod()
-        //companyName.text = args.name
-        //descriptionCompany.text = args.description
-        //descriptionCompany.movementMethod = ScrollingMovementMethod()
-        setImageContent()
-    }
-
-
-    private fun setImageContent() {
-        Glide
-            .with(this)
-            .load("https://thispersondoesnotexist.com/image")
-            .placeholder(R.drawable.logo)
-            .diskCacheStrategy(DiskCacheStrategy.NONE)
-            .skipMemoryCache(true)
-            .into(imageView)
-    }*/
 
 
     private fun clickItem(postFeed: PostTips) {

@@ -10,12 +10,15 @@ data class SalonResponse (
     @SerializedName("name")
     val name: String,
 
+    @SerializedName("phone")
+    val phone: String,
+
     @SerializedName("site")
     val site: String,
 
     @SerializedName("img")
     val photo: String,
 
-/*    @SerializedName("addresses")
-    val address: AddressesResponse*/
+    @SerializedName("addresses")
+    val address: AddressesResponse
 )

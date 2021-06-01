@@ -27,7 +27,8 @@
     <!--- Login -->
     <string name="login_title"> Faça login para começar </string>
     <string name="login_button"> Fazer login </string>
-    <string name="login_register">É novo aqui? Cadastre-se para começar!</string>
+    <string name="login_register">É novo aqui?</string>
+    <string name="login_register2">para começar!</string>
     <string name="forget_password"><u>Esqueceu sua senha?</u></string>
     <string name="skip">Pular</string>
     <string name="login_reg_button"><u>Cadastre-se</u></string>
@@ -54,13 +55,11 @@
     <string name="search_Salon">Avançar</string>
 
     <!--- Tips -->
-    <string name="phrase_tips">Compartilhe dicas</string>
+    <string name="phrase_tips">Compartilhe <b>dicas</b></string>
     <string name="text_tips">Escreva aqui sua dica</string>
 
-    <!--- Home -->
-    <string name="phrase_home">Estamos trabalhando nisso...</string>
-
     <!--- Profile -->
-    <string name="button_logout">Logout</string>
+    <string name="phrase_profile">Estamos trabalhando nisso...</string>
+
 
 </resources>
