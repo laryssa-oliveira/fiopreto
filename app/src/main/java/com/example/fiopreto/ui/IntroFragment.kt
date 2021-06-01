@@ -13,6 +13,7 @@ class IntroFragment : Fragment() {
 
     private lateinit var introButton: AppCompatButton
 
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -28,7 +29,7 @@ class IntroFragment : Fragment() {
         introButton.setOnClickListener{
 
             findNavController().navigate(
-                IntroFragmentDirections.actionIntroFragmentToRegisterFragment()
+                IntroFragmentDirections.actionIntroFragmentToIntro2Fragment2()
             )
 
             }

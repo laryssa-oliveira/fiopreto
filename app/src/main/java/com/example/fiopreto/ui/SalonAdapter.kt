@@ -13,11 +13,11 @@ import com.example.fiopreto.R
 
 class SalonAdapter(
     private val callback: (PostSalon) -> Unit
-) : RecyclerView.Adapter<SalonAdapter.SaloonViewHolder>() {
+) : RecyclerView.Adapter<SalonAdapter.SalonViewHolder>() {
 
     private var postSalon: List<PostSalon> = emptyList()
 
-    inner class SaloonViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class SalonViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(postSalon: PostSalon) {
             itemView.findViewById<AppCompatTextView>(R.id.salonName).text =
                 postSalon.name
@@ -39,13 +39,13 @@ class SalonAdapter(
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): SaloonViewHolder {
+    ): SalonViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.item_salon, parent, false)
-        return SaloonViewHolder(view)
+        return SalonViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: SaloonViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: SalonViewHolder, position: Int) {
         holder.bind(postSalon[position])
     }
 

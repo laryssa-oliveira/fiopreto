@@ -5,5 +5,6 @@ import com.google.gson.annotations.SerializedName
 data class GetCityResponse (
 
     @SerializedName("data")
-    val salonResp: List<SalonResponse>
+    val cityResp: List<FindSalonResponse>
 )
+

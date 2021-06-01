@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".ui.IntroFragment">
+    tools:context=".ui.Intro2Fragment">
 
 
     <ImageView
@@ -22,13 +22,32 @@
 
     </ImageView>
 
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="32dp"
+        android:autoSizeMinTextSize="8sp"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="@font/montserrat"
+        android:text="@string/intro_feed"
+        android:textColor="@color/charcoalBlack"
+        android:textSize="24sp"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/img" />
+
+
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/txt"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="4dp"
         android:layout_marginEnd="32dp"
         android:autoSizeMinTextSize="8sp"
         android:autoSizeTextType="uniform"
@@ -39,23 +58,56 @@
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/img" />
+        app:layout_constraintTop_toBottomOf="@id/title" />
+
+    <ImageView
+        android:id="@+id/page1"
+        android:layout_width="44dp"
+        android:layout_height="12dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="96dp"
+        android:layout_marginEnd="64dp"
+        android:src="@drawable/page1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt">
+
+    </ImageView>
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/intro_button"
+        android:id="@+id/intro2_button_next"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="112dp"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="40dp"
         android:background="@drawable/background_button"
-        android:text="@string/intro_button"
+        android:text="@string/intro_btn_next"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/intro2_button_back"
+        app:layout_constraintTop_toBottomOf="@id/txt" />
+
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/intro2_button_back"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="112dp"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/background_stroke"
+        android:text="@string/intro_btn_back"
+        android:textAllCaps="false"
+        android:textColor="@color/green"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/intro2_button_next"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/txt" />
 

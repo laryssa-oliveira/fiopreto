@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="24dp"
+    android:elevation="16dp">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageTips"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:adjustViewBounds="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_height="182dp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/personNameTips"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="Name"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toStartOf="@id/button_heart"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@id/imageTips"
+            app:layout_constraintTop_toBottomOf="@id/imageTips" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/personTcxtTips"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="Texto"
+            android:textSize="24sp"
+            app:layout_constraintTop_toBottomOf="@id/personNameTips"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_heart"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/ic_heart"
+            android:backgroundTint="@color/white"
+            app:backgroundTint="@color/charcoalBlack"
+            app:layout_constraintEnd_toEndOf="@id/imageTips"
+            app:layout_constraintTop_toBottomOf="@id/imageTips" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

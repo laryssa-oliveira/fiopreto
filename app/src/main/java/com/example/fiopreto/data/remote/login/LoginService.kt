@@ -18,7 +18,7 @@ interface LoginService {
 
     suspend fun login(
         @Body loginRequest: LoginRequest
-    ): Response<LoginResponse>
+    ): LoginResponse
 
     companion object{
         fun newInstance(): LoginService = Retrofit.Builder()

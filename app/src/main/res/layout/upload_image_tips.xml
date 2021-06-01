@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:id="@+id/upload_image_tips"
+    tools:context=".ui.UploadFeedActivity">
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/image_view_tips"
+        android:scaleType="centerCrop"
+        android:layout_width="match_parent"
+        android:layout_height="312dp"
+        android:layout_marginTop="104dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:src="@drawable/background_image"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/pick_button_tips"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:text="@string/button_pick"
+        android:textAllCaps="false"
+        android:textColor="@color/charcoalBlack"
+        android:background="@drawable/background_stroke"
+        app:layout_constraintTop_toBottomOf="@id/image_view_tips" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/upload_tips"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:text="@string/button_upload"
+        android:textColor="@color/white"
+        android:textAllCaps="false"
+        android:background="@drawable/background_button"
+        app:layout_constraintTop_toBottomOf="@id/pick_button_tips"
+        />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/text_tips"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:hint="@string/text_tips"
+        app:layout_constraintTop_toBottomOf="@id/upload_tips"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/save_tips"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:text="@string/button_save"
+        android:textColor="@color/white"
+        android:textAllCaps="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_button"
+        app:layout_constraintTop_toBottomOf="@id/text_tips"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

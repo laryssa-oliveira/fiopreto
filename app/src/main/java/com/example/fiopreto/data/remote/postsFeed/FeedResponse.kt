@@ -7,8 +7,8 @@ data class FeedResponse (
     @SerializedName("id")
     val id: Int,
 
-    @SerializedName("text")
-    val name: String,
+    @SerializedName("posts")
+    val user: UserResponse,
 
     @SerializedName("img")
     val photo: String

@@ -42,9 +42,15 @@ class UploadFeedActivity : AppCompatActivity() {
 
         upload_feed.setOnClickListener {
             viewModel.uploadImageFeed()
+
+
+        }
+
+        save_feed.setOnClickListener {
+            finish()
         }
     }
-
+    /*
     private fun uploadImage() {
 
         val byteArrayOutputStream = ByteArrayOutputStream()
@@ -55,6 +61,8 @@ class UploadFeedActivity : AppCompatActivity() {
 
         Toast.makeText(this,encodedImage,Toast.LENGTH_SHORT).show()
     }
+
+     */
 
     private fun pickImageFromGallery() {
         val intent = Intent(Intent.ACTION_PICK)

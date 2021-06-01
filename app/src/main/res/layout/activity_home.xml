@@ -6,59 +6,50 @@
     android:layout_height="match_parent"
     tools:context=".ui.HomeActivity">
 
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/nav_host_home"
-        android:name="androidx.navigation.fragment.NavHostFragment"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:defaultNavHost="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:navGraph="@navigation/home_graph" />
+
 
     <android.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
         android:background="@drawable/toolbar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        android:elevation="16dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="88dp">
 
             <ImageView
                 android:id="@+id/home_title"
-                android:layout_width="88dp"
-                android:layout_height="40dp"
-                android:layout_marginStart="136dp"
-                android:layout_marginTop="40dp"
-                android:src="@drawable/title"
+                android:layout_width="136dp"
+                android:layout_height="64dp"
+                android:layout_marginStart="115dp"
+                android:layout_marginEnd="115dp"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/nested_text"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
 
-            <ImageView
-                android:id="@+id/home_logo"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginTop="40dp"
-                android:src="@drawable/logo"
-                app:layout_constraintStart_toEndOf="@id/home_title"
-                app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </android.widget.Toolbar>
 
-
-    <FrameLayout
-        android:id="@+id/container"
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/nav_host_home"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        app:defaultNavHost="true"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/navigation"
+        app:navGraph="@navigation/home_graph" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/navigation"

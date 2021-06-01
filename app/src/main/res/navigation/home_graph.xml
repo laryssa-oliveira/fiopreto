@@ -15,14 +15,6 @@
         android:name="com.example.fiopreto.ui.FeedFragment"
         android:label="fragment_feed"
         tools:layout="@layout/fragment_feed" >
-        <argument
-            android:name="name"
-            app:argType="string"
-            app:nullable="true" />
-        <argument
-            android:name="imageUrl"
-            app:argType="string"
-            app:nullable="true" />
     </fragment>
     <fragment
         android:id="@+id/findSalonFragment"
@@ -31,12 +23,31 @@
         tools:layout="@layout/fragment_find_salon" >
         <action
             android:id="@+id/action_findSalonFragment_to_salonFragment"
-            app:destination="@id/salonFragment" />
+            app:destination="@id/salonFragment">
+
+        </action>
+
+
     </fragment>
     <fragment
         android:id="@+id/salonFragment"
         android:name="com.example.fiopreto.ui.SalonFragment"
         android:label="fragment_salon"
-        tools:layout="@layout/fragment_salon" />
+        tools:layout="@layout/fragment_salon" >
+        <argument
+            android:name="ibge"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/tipsFragment"
+        android:name="com.example.fiopreto.ui.TipsFragment"
+        android:label="fragment_tips"
+        tools:layout="@layout/fragment_tips" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.fiopreto.ui.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+
 
 </navigation>

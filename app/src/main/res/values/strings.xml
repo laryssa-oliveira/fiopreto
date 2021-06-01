@@ -10,10 +10,11 @@
     <string name="intro_btn_back">Anterior</string>
 
     <string name="intro2_txt">Inspire pessoas que buscam alcançar a sua autonomia estética.</string>
-    <string name="intro_feed">Feed</string>
+    <string name="intro_feed"><b>Feed</b></string>
     <string name="intro3_txt">Compartilhe e receba dicas para cuidados com seu cabelo.</string>
+    <string name="intro_tips"><b>Dicas</b></string>
     <string name="intro4_txt">Faça agendamentos em salões focados em cabelos crespos e cacheados.</string>
-    <string name="intro_topic3"> • Empoderamento </string>
+    <string name="intro_schedule"><b>Agendamento</b></string>
 
     <!--- Register -->
     <string name="register_title">Crie uma conta</string>
@@ -40,6 +41,9 @@
 
     <!--- Feed -->
     <string name="phrase_feed">Inspire <b>pessoas</b></string>
+    <string name="button_pick">Escolher imagem</string>
+    <string name="button_upload">Upload</string>
+    <string name="button_save">Salvar</string>
 
     <!--- Salon -->
     <string name="phrase_salon">Cabelo bom é cabelo <b> bem cuidado</b></string>
@@ -49,5 +53,14 @@
 
     <string name="search_Salon">Avançar</string>
 
+    <!--- Tips -->
+    <string name="phrase_tips">Compartilhe dicas</string>
+    <string name="text_tips">Escreva aqui sua dica</string>
+
+    <!--- Home -->
+    <string name="phrase_home">Estamos trabalhando nisso...</string>
+
+    <!--- Profile -->
+    <string name="button_logout">Logout</string>
 
 </resources>

@@ -11,10 +11,12 @@
         tools:layout="@layout/fragment_login" >
         <action
             android:id="@+id/action_loginFragment_to_introFragment"
-            app:destination="@id/introFragment" />
+            app:destination="@id/introFragment"
+            app:popUpTo="@id/loginFragment" />
         <action
             android:id="@+id/action_loginFragment_to_home_graph"
-            app:destination="@id/home_graph" />
+            app:destination="@id/home_graph"
+            app:popUpTo="@id/loginFragment" />
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
@@ -31,8 +33,51 @@
         android:label="fragment_intro"
         tools:layout="@layout/fragment_intro" >
         <action
-            android:id="@+id/action_introFragment_to_registerFragment"
-            app:destination="@id/registerFragment" />
+            android:id="@+id/action_introFragment_to_intro2Fragment2"
+            app:destination="@id/intro2Fragment2"
+            app:popUpTo="@id/introFragment" />
     </fragment>
     <include app:graph="@navigation/home_graph" />
+    <fragment
+        android:id="@+id/intro2Fragment2"
+        android:name="com.example.fiopreto.ui.Intro2Fragment"
+        android:label="fragment_intro2"
+        tools:layout="@layout/fragment_intro2" >
+        <action
+            android:id="@+id/action_intro2Fragment2_to_intro3Fragment"
+            app:destination="@id/intro3Fragment"
+            app:popUpTo="@id/intro2Fragment2" />
+        <action
+            android:id="@+id/action_intro2Fragment2_to_introFragment"
+            app:destination="@id/introFragment"
+            app:popUpTo="@id/introFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/intro3Fragment"
+        android:name="com.example.fiopreto.ui.Intro3Fragment"
+        android:label="fragment_intro3"
+        tools:layout="@layout/fragment_intro3" >
+        <action
+            android:id="@+id/action_intro3Fragment_to_intro4Fragment"
+            app:destination="@id/intro4Fragment"
+            app:popUpTo="@id/intro3Fragment" />
+        <action
+            android:id="@+id/action_intro3Fragment_to_intro2Fragment2"
+            app:destination="@id/intro2Fragment2"
+            app:popUpTo="@id/intro2Fragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/intro4Fragment"
+        android:name="com.example.fiopreto.ui.Intro4Fragment"
+        android:label="fragment_intro4"
+        tools:layout="@layout/fragment_intro4" >
+        <action
+            android:id="@+id/action_intro4Fragment_to_registerFragment"
+            app:destination="@id/registerFragment"
+            app:popUpTo="@id/intro4Fragment" />
+        <action
+            android:id="@+id/action_intro4Fragment_to_intro3Fragment"
+            app:destination="@id/intro3Fragment"
+            app:popUpTo="@id/intro3Fragment" />
+    </fragment>
 </navigation>
