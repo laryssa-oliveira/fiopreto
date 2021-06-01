@@ -1,5 +1,6 @@
 package com.example.fiopreto.data.remote.postsFeed
 
+import com.example.fiopreto.data.remote.ResultWrapper
 import okhttp3.OkHttpClient
 import okhttp3.ResponseBody
 import okhttp3.logging.HttpLoggingInterceptor
@@ -13,13 +14,13 @@ import java.util.concurrent.TimeUnit
 
 interface FeedService {
 
-    @GET("post/")
+    @GET("post/feed/")
 
     suspend fun getPostsFeed(
         @Header("Authorization") authorization: String,
        // @Header("client") client: String,
        // @Header("uid") uid: String
-    ): Response<GetPostsFeedResponse>
+    ): GetPostsFeedResponse
     /*
     @Multipart // POST request to upload an image from storage
     @POST("fileUpload/")

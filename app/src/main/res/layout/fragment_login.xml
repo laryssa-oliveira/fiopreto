@@ -89,10 +89,8 @@
         app:errorEnabled="true"
         app:helperTextTextColor="@color/red"
         app:layout_constraintStart_toStartOf="@id/layoutEdtEmail"
-        app:layout_constraintEnd_toEndOf="@id/layoutEdtEmail">
-        <!--app:errorEnabled="true"-->
-        <!--app:errorTextAppearance="@style/Theme.ErrorAppearence"-->
-        <!-- app:passwordToggleEnabled="true" -->
+        app:layout_constraintEnd_toEndOf="@id/layoutEdtEmail"
+        app:passwordToggleEnabled="true">
 
 
         <com.google.android.material.textfield.TextInputEditText

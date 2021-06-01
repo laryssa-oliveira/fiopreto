@@ -4,7 +4,7 @@ data class PostSalon(
     val id: Int = 0,
     val name: String? = "",
     val site: String? = "",
-    val pathImage: String? = "",
+    val pathImage: String? = ""
     //val address: Addresses? = null
 )
 

@@ -8,14 +8,18 @@
     tools:context=".ui.HomeFragment">
 
     <TextView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:text="Home"
-        android:layout_marginTop="100dp"
-        android:layout_marginStart="100dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/phrase_home"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
         android:textSize="32sp"
+        android:fontFamily="@font/montserrat"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        >
 
 
     </TextView>

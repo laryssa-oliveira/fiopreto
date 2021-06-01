@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/charcoalBlack</item>
+        <item name="colorPrimaryDark">@color/purple_700</item>
+        <item name="colorAccent">@color/black</item>
+    </style>
+
+    <style name="HelperTextAppearance" parent="TextAppearance.Design.Error">
+        <item name="android:textColor">@color/red</item>
+    </style>
+
+</resources>

@@ -2,7 +2,6 @@ package com.example.fiopreto.data.remote.postsFeed
 
 import com.example.fiopreto.PostFeed
 import com.example.fiopreto.extensions.wrapResponse
-import com.example.fiopreto.data.Constants.HEADER_ACCESS_TOKEN
 import com.example.fiopreto.data.Constants.HEADER_AUTHORIZATION
 import com.example.fiopreto.data.FeedRepository
 import com.example.fiopreto.data.local.LocalDataSource

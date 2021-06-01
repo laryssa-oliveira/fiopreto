@@ -4,12 +4,16 @@ import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.Drawable
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.widget.AppCompatButton
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.navigation.fragment.findNavController
@@ -24,6 +28,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import com.example.fiopreto.presentation.ViewState.State.*
+import com.google.android.material.textfield.TextInputLayout
 import kotlinx.android.synthetic.main.fragment_login.*
 import retrofit2.Response
 
@@ -34,6 +39,7 @@ class LoginFragment : Fragment() {
     private lateinit var edtEmail: TextInputEditText
     private lateinit var edtPassword: TextInputEditText
     private lateinit var viewLoading: View
+
     //private lateinit var progressBar: ProgressBar
     private val loginViewModel by viewModel<LoginViewModel>()
     //private lateinit var loadingGroup: Group
@@ -56,12 +62,35 @@ class LoginFragment : Fragment() {
         //viewLoading = view.findViewById(R.id.viewLoading)
         //progressBar = view.findViewById(R.id.progressBar)
         //loadingGroup = view.findViewById(R.id.loadingGroup)
+        edtPassword.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable?) {
+            }
 
-        button.setOnClickListener{
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+            }
+        })
+
+        edtPassword.afterTextChanged {
+            layoutEdtPassword.helperText = null
+            login_button.setBackgroundResource(R.drawable.background_button)
+            login_button.setText("Fazer login")
+        }
+
+        edtEmail.afterTextChanged {
+            layoutEdtPassword.helperText = null
+            login_button.setBackgroundResource(R.drawable.background_button)
+            login_button.setText("Fazer login")
+        }
+
+        button.setOnClickListener {
+
             loginViewModel.login(edtEmail.text.toString(), edtPassword.text.toString())
         }
 
-        buttonReg.setOnClickListener{
+        buttonReg.setOnClickListener {
             findNavController().navigate(
                 LoginFragmentDirections.actionLoginFragmentToIntroFragment()
             )
@@ -73,7 +102,7 @@ class LoginFragment : Fragment() {
 
     private fun setObservers() {
         loginViewModel.headersLiveData.observe(viewLifecycleOwner, {
-            when(it.state) {
+            when (it.state) {
 
                 SUCCESS -> onResultSuccess()
                 ERROR -> onResultError(it.error)
@@ -82,6 +111,20 @@ class LoginFragment : Fragment() {
 
         })
 
+    }
+
+    fun TextInputEditText.afterTextChanged(afterTextChanged: (String) -> Unit) {
+        this.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+            }
+
+            override fun afterTextChanged(editable: Editable?) {
+                afterTextChanged.invoke(editable.toString())
+            }
+        })
     }
 
     /*
@@ -94,32 +137,40 @@ class LoginFragment : Fragment() {
     }*/
 
     private fun onResultError(error: Throwable?) {
-        Toast.makeText(requireContext(), error?.message?: "", Toast.LENGTH_LONG).show()
+        Toast.makeText(requireContext(), error?.message ?: "", Toast.LENGTH_LONG).show()
+
         layoutEdtPassword.helperText = "Credenciais incorretas*"
         login_button.setBackgroundResource(R.drawable.background_button_red)
         login_button.setText("X")
+
+        /*if (layoutEdtPassword.isSelected) {
+            validateAgain()
+        }
         //validateAgain()
     }
 
-    /*private fun validateAgain() {
-        if(edtEmail.text.toString()!=""){
+    private fun validateAgain() {
+        if(edtPassword.text.toString()!=null)
             layoutEdtPassword.helperText = null
             login_button.setBackgroundResource(R.drawable.background_button)
-            login_button.setText("Fazer login")
-        }
-
-    }*/
-
-    private fun onResultSuccess() {
-        val changePage = Intent(requireActivity(), HomeActivity::class.java)
-        startActivity(changePage)
-        findNavController().navigate(
-            LoginFragmentDirections.actionLoginFragmentToHomeGraph()
-        )
-        loginViewModel.clearStatus()
-
+            login_button.setText("Fazer login")*/
 
     }
+
+
+        private fun onResultSuccess() {
+            val changePage = Intent(requireActivity(), HomeActivity::class.java)
+            startActivity(changePage)
+            findNavController().navigate(
+                LoginFragmentDirections.actionLoginFragmentToHomeGraph()
+            )
+            loginViewModel.clearStatus()
+
+
+        }
+
+
+
 
 
 }

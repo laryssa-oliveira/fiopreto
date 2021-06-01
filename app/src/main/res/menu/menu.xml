@@ -5,35 +5,35 @@
     tools:showIn="navigation_view">
 
     <item
-        android:id="@+id/navigation_home"
+        android:id="@+id/homeFragment"
         android:enabled="true"
         android:icon="@drawable/ic_home"
         android:title="@string/home"
         android:fontFamily="@font/montserrat"/>
 
     <item
-        android:id="@+id/navigation_tips"
+        android:id="@+id/tipsFragment"
         android:enabled="true"
         android:fontFamily="@font/montserrat"
         android:icon="@drawable/ic_lightbulb"
         android:title="@string/tips" />
 
     <item
-        android:id="@+id/navigation_feed"
+        android:id="@+id/feedFragment"
         android:enabled="true"
         android:fontFamily="@font/montserrat"
         android:icon="@drawable/ic_feed"
         android:title="@string/feed" />
 
     <item
-        android:id="@+id/navigation_salon"
+        android:id="@+id/findSalonFragment"
         android:enabled="true"
         android:icon="@drawable/ic_cut"
         android:title="@string/salon"
         android:fontFamily="@font/montserrat"/>
 
     <item
-        android:id="@+id/navigation_profile"
+        android:id="@+id/profileFragment"
         android:enabled="true"
         android:icon="@drawable/ic_person"
         android:title="@string/profile"

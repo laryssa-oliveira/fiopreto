@@ -1,11 +1,14 @@
 package com.example.fiopreto.injection
 
-import com.example.fiopreto.data.Constants
 import com.example.fiopreto.data.local.LocalDataSource
 import com.example.fiopreto.data.remote.login.LoginService
+
+import com.example.fiopreto.data.remote.postSalon.FindSalonService
 import com.example.fiopreto.data.remote.postsFeed.FeedService
 import com.example.fiopreto.data.remote.postSalon.SalonService
 import com.example.fiopreto.data.remote.postsFeed.UploadFeedService
+import com.example.fiopreto.data.remote.tips.TipsService
+import com.example.fiopreto.data.remote.tips.UploadTipsService
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.Request
@@ -20,6 +23,9 @@ val dataRemoteModule = module {
     single { LoginService.newInstance() }
     single { UploadFeedService.newInstance(get()) }
     single<OkHttpClient> { getClient(get()) }
+    single { FindSalonService.newInstance(get()) }
+    single { TipsService.newInstance(get()) }
+    single { UploadTipsService.newInstance(get()) }
 
 }
 

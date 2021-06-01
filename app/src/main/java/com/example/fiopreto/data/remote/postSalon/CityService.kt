@@ -1,5 +1,5 @@
 package com.example.fiopreto.data.remote.postSalon
-
+/*
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Response
@@ -10,7 +10,20 @@ import retrofit2.http.Header
 import java.util.concurrent.TimeUnit
 
 interface CityService {
+    @GET("salon/city/")
+    suspend fun getPostsSalon(
 
+    ): Response<GetCitiesResponse>
+
+    companion object {
+        fun newInstance(client: OkHttpClient): CityService = Retrofit.Builder()
+            .baseUrl("https://fiopreto.herokuapp.com/api/v1/")
+            .client(client)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build().create(CityService::class.java)
+    }
+}
+/*
     @GET("post/")
     //Call<List<Cities>> populateList();
     suspend fun getPostsSaloon(
@@ -38,4 +51,4 @@ interface CityService {
             }).build()
 
     }
-}
+}*/

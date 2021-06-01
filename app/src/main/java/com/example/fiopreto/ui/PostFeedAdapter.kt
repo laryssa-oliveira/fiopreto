@@ -15,7 +15,7 @@ import com.google.android.material.button.MaterialButton
 
 class PostFeedAdapter(
     private val callback: (PostFeed) -> Unit
-    ) : RecyclerView.Adapter<PostFeedAdapter.PostsFeedViewHolder>() {
+) : RecyclerView.Adapter<PostFeedAdapter.PostsFeedViewHolder>() {
 
     private var postsFeed: List<PostFeed> = emptyList()
     /*private lateinit var uploadButton: MaterialButton
@@ -24,7 +24,7 @@ class PostFeedAdapter(
     inner class PostsFeedViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(postFeed: PostFeed) {
             itemView.findViewById<AppCompatTextView>(R.id.personName).text =
-                postFeed.name
+                postFeed.user?.name
             val imageView = itemView.findViewById<AppCompatImageView>(R.id.image_feed)
             itemView.setOnClickListener { callback.invoke(postFeed) }
 
@@ -43,12 +43,12 @@ class PostFeedAdapter(
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.item_post_feed, parent, false)
         return PostsFeedViewHolder(view)
-       /*
-        uploadButton = view.findViewById(R.id.buttonFeed)
+        /*
+         uploadButton = view.findViewById(R.id.buttonFeed)
 
-        uploadButton.setOnClickListener{
-            uploadImage()
-        }*/
+         uploadButton.setOnClickListener{
+             uploadImage()
+         }*/
     }
     /*
     private fun uploadImage(){
@@ -63,10 +63,10 @@ class PostFeedAdapter(
     }
 
     override fun getItemCount(): Int {
-        return  postsFeed.size
+        return postsFeed.size
     }
 
-    fun setItems(list: List<PostFeed>){
+    fun setItems(list: List<PostFeed>) {
         postsFeed = list
         notifyDataSetChanged()
     }

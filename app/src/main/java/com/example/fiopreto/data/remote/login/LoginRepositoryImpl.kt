@@ -14,15 +14,16 @@ class LoginRepositoryImpl(
 
     override suspend fun login(email: String, password: String) =
         wrapResponse{
-            loginService.login(
+            val body = loginService.login(
                 LoginRequest(
                     email = email,
                     password = password
                 )
-            ).apply {
-                localDataSource.saveHeadersToPreferences(Headers.Builder()
-                    .add("Authorization","Bearer "+ this.body()?.token.orEmpty()).build())
-            }
+
+            )
+            localDataSource.saveHeadersToPreferences(Headers.Builder()
+                .add("Authorization","Bearer "+ body?.token.orEmpty()).build())
+                body
         }
 
 }

@@ -2,6 +2,8 @@ package com.example.fiopreto.ui
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -13,6 +15,9 @@ import com.example.fiopreto.R
 import com.example.fiopreto.register.RegisterRequest
 import com.example.fiopreto.register.RegisterService
 import com.google.android.material.textfield.TextInputEditText
+import kotlinx.android.synthetic.main.fragment_login.*
+import kotlinx.android.synthetic.main.fragment_login.layoutEdtPassword
+import kotlinx.android.synthetic.main.fragment_register.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -47,6 +52,78 @@ class RegisterFragment : Fragment() {
         regEmail = view.findViewById(R.id.edtEmail)
         regPassword = view.findViewById(R.id.edtPassword)
 
+        regName.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable?) {
+            }
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+            }
+        })
+
+        regName.afterTextChanged {
+            layoutDob.helperText = null
+            layoutEmail.helperText = null
+            layoutPassword.helperText = null
+            register_button.setBackgroundResource(R.drawable.background_button)
+        }
+
+        regDob.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable?) {
+            }
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+            }
+        })
+
+        regDob.afterTextChanged {
+            layoutDob.helperText = null
+            layoutEmail.helperText = null
+            layoutPassword.helperText = null
+            register_button.setBackgroundResource(R.drawable.background_button)
+        }
+
+        regEmail.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable?) {
+            }
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+            }
+        })
+
+        regEmail.afterTextChanged {
+            layoutDob.helperText = null
+            layoutEmail.helperText = null
+            layoutPassword.helperText = null
+            register_button.setBackgroundResource(R.drawable.background_button)
+        }
+
+        regPassword.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable?) {
+            }
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+            }
+        })
+
+        regPassword.afterTextChanged {
+            layoutDob.helperText = null
+            layoutEmail.helperText = null
+            layoutPassword.helperText = null
+            register_button.setBackgroundResource(R.drawable.background_button)
+        }
+
         regButton.setOnClickListener{
             CoroutineScope(Dispatchers.Main).launch {
                 val response = RegisterService.newInstance().register(
@@ -68,10 +145,31 @@ class RegisterFragment : Fragment() {
         if(response.isSuccessful) {
             Log.d("LOGIN", "header token ${response.headers().get("token")}")
             val changePage = Intent(requireContext(), HomeActivity::class.java)
+            register_button.setBackgroundResource(R.drawable.background_button)
             startActivity(changePage)
             findNavController().navigate(
                 RegisterFragmentDirections.actionRegisterFragmentToHomeGraph()
             )
         }
+        else{
+            layoutDob.helperText = "*Data válida MM/DD/AAAA"
+            layoutEmail.helperText = "*Esse e-mail já está sendo usado."
+            layoutPassword.helperText = "*Deve conter no mínimo 8 caracteres, 1 letra, 1 caracter especial e 1 letra maiúscula"
+            register_button.setBackgroundResource(R.drawable.background_button_grey)
+        }
+    }
+
+    fun TextInputEditText.afterTextChanged(afterTextChanged: (String) -> Unit) {
+        this.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+            }
+
+            override fun afterTextChanged(editable: Editable?) {
+                afterTextChanged.invoke(editable.toString())
+            }
+        })
     }
 }

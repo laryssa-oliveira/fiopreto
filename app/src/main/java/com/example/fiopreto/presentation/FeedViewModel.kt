@@ -10,8 +10,8 @@ import com.example.fiopreto.extensions.viewState
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class FeedViewModel (
-    private val repository : FeedRepository
+class FeedViewModel(
+    private val repository: FeedRepository
 ) : ViewModel() {
 
     private val _postFeedListLiveData by viewState<List<PostFeed>>()
@@ -19,18 +19,19 @@ class FeedViewModel (
 
     fun getPostsFeed() {
         //_postFeedListLiveData.value = ViewState.loading(true)
-        viewModelScope.launch (Dispatchers.Main) {
+        viewModelScope.launch(Dispatchers.Main) {
             handleResponse(repository.getPostsFeed())
         }
     }
 
 
     private fun handleResponse(response: ResultWrapper<List<PostFeed>>) {
-        when(response){
+        when (response) {
             is ResultWrapper.Success -> _postFeedListLiveData.value =
                 ViewState.success(response.data)
-            is ResultWrapper.Failure -> _postFeedListLiveData.value = ViewState.error(response.error)
+            is ResultWrapper.Failure -> _postFeedListLiveData.value =
+                ViewState.error(response.error)
         }
-       // _postFeedListLiveData.value = ViewState.loading(false)
+        // _postFeedListLiveData.value = ViewState.loading(false)
     }
 }

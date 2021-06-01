@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fiopreto.PostSalon
 import com.example.fiopreto.R
@@ -14,12 +15,12 @@ import com.example.fiopreto.presentation.ViewState
 import com.google.android.material.button.MaterialButton
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class SalonFragment : Fragment() {
+class SalonFragment() : Fragment() {
 
     private val adapter by lazy { SalonAdapter(::clickItem) }
     private lateinit var recyclerView: RecyclerView
     private val salonViewModel by viewModel<SalonViewModel>()
-    private lateinit var button: MaterialButton
+    private val args by navArgs<SalonFragmentArgs>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -33,7 +34,8 @@ class SalonFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         recyclerView = view.findViewById(R.id.recyclerViewSalon)
         recyclerView.adapter = adapter
-        salonViewModel.getPostSalon()
+
+        salonViewModel.getPostSalon(args.ibge)
         //button = view.findViewById(R.id.buttonSchedule)
 
         setObservers()
