@@ -20,15 +20,13 @@
             android:adjustViewBounds="true"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/buttonSchedule"
-            tools:layout_height="182dp" />
+            tools:layout_height="160dp" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/salonName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
             android:text="Name"
             android:textSize="16sp"
             app:layout_constraintHorizontal_bias="0.0"
@@ -36,43 +34,75 @@
             app:layout_constraintTop_toTopOf="@+id/imageSalon"/>
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/salonAddress"
+            android:id="@+id/salonStreet"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:text="Endereço"
+            android:layout_marginTop="8dp"
+            android:text="Rua"
             android:textSize="12sp"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@id/imageSalon"
             app:layout_constraintTop_toBottomOf="@id/salonName" />
 
         <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/salonNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="Numero"
+            android:textSize="12sp"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@id/salonStreet"
+            app:layout_constraintTop_toTopOf="@id/salonStreet" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/salonCity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="Cidade"
+            android:textSize="12sp"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@id/imageSalon"
+            app:layout_constraintTop_toBottomOf="@id/salonNumber" />
+
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/salonState"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:text="Disponibilidade"
+            android:text="Estado"
+            android:textSize="12sp"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@id/salonCity"
+            app:layout_constraintTop_toTopOf="@id/salonCity" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/salonPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="Telefone"
             android:textSize="12sp"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@id/imageSalon"
-            app:layout_constraintTop_toBottomOf="@id/salonAddress" />
+            app:layout_constraintTop_toBottomOf="@id/salonCity" />
 
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/salonSite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="Site"
+            android:textSize="12sp"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@id/imageSalon"
+            app:layout_constraintTop_toBottomOf="@id/salonPhone" />
 
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/buttonSchedule"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/schedule"
-            android:backgroundTint="@color/green"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="@id/imageSalon"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/imageSalon" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

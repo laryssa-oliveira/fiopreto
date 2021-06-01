@@ -38,7 +38,7 @@ class LoginFragment : Fragment() {
     private lateinit var buttonReg: AppCompatButton
     private lateinit var edtEmail: TextInputEditText
     private lateinit var edtPassword: TextInputEditText
-    private lateinit var viewLoading: View
+    //private lateinit var viewLoading: View
 
     //private lateinit var progressBar: ProgressBar
     private val loginViewModel by viewModel<LoginViewModel>()
@@ -142,18 +142,6 @@ class LoginFragment : Fragment() {
         layoutEdtPassword.helperText = "Credenciais incorretas*"
         login_button.setBackgroundResource(R.drawable.background_button_red)
         login_button.setText("X")
-
-        /*if (layoutEdtPassword.isSelected) {
-            validateAgain()
-        }
-        //validateAgain()
-    }
-
-    private fun validateAgain() {
-        if(edtPassword.text.toString()!=null)
-            layoutEdtPassword.helperText = null
-            login_button.setBackgroundResource(R.drawable.background_button)
-            login_button.setText("Fazer login")*/
 
     }
 

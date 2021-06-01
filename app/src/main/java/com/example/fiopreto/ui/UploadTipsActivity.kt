@@ -1,5 +1,6 @@
-package com.example.fiopreto.ui
 
+package com.example.fiopreto.ui
+/*
 import android.Manifest
 import android.app.Activity
 import android.content.Intent
@@ -92,4 +93,10 @@ class UploadTipsActivity : AppCompatActivity() {
         }
 
     }
+
 }
+
+
+ */
+
+ */

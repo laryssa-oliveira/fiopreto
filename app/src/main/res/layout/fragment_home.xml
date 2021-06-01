@@ -7,22 +7,38 @@
     android:background="@color/white"
     tools:context=".ui.HomeFragment">
 
-    <TextView
-        android:layout_width="match_parent"
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txt_title"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/phrase_home"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:textSize="32sp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="136dp"
+        android:layout_marginEnd="24dp"
+        android:autoSizeMinTextSize="8sp"
+        android:autoSizeTextType="uniform"
         android:fontFamily="@font/montserrat"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/intro_title"
+        android:textColor="@color/charcoalBlack"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
-        >
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginEnd="64dp"
+        android:src="@drawable/loving"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_title">
 
-    </TextView>
+    </ImageView>
 
 
 

@@ -21,16 +21,26 @@ class SalonAdapter(
         fun bind(postSalon: PostSalon) {
             itemView.findViewById<AppCompatTextView>(R.id.salonName).text =
                 postSalon.name
-            /*itemView.findViewById<AppCompatTextView>(R.id.salonAddress).text =
-                postSalon.address?.street*/
+            itemView.findViewById<AppCompatTextView>(R.id.salonPhone).text =
+                postSalon.phone
+            itemView.findViewById<AppCompatTextView>(R.id.salonSite).text =
+                postSalon.site
+            itemView.findViewById<AppCompatTextView>(R.id.salonStreet).text =
+                postSalon.address?.street
+            itemView.findViewById<AppCompatTextView>(R.id.salonNumber).text =
+                postSalon.address?.number.toString()
+            itemView.findViewById<AppCompatTextView>(R.id.salonCity).text =
+                postSalon.address?.city
             itemView.findViewById<AppCompatTextView>(R.id.salonState).text =
+                postSalon.address?.state
+            itemView.findViewById<AppCompatTextView>(R.id.salonSite).text =
                 postSalon.site
             val imageView = itemView.findViewById<AppCompatImageView>(R.id.imageSalon)
             itemView.setOnClickListener { callback.invoke(postSalon) }
 
             Glide
                 .with(itemView)
-                .load(postSalon.pathImage)
+                .load(postSalon.photo)
                 .placeholder(R.drawable.logo)
                 .into(imageView);
         }

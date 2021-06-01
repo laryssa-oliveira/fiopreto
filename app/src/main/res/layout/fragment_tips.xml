@@ -53,6 +53,7 @@
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 
+    <!--
     <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonTips"
         android:layout_width="64dp"
@@ -75,6 +76,8 @@
         app:layout_constraintTop_toTopOf="parent">
 
     </com.google.android.material.button.MaterialButton>
+    -->
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
