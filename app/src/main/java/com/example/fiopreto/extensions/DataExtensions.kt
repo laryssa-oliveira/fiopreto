@@ -10,8 +10,9 @@ suspend fun <T> wrapResponse(
     call: suspend () -> T
 
 ): ResultWrapper<T> {
-    val result = call()
+
     return try {
+        val result = call()
         Success(result)
     } catch (error: Throwable){
         Failure(error)
