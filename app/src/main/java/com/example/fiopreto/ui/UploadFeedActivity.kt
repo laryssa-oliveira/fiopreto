@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.graphics.createBitmap
 import com.example.fiopreto.R
 import com.example.fiopreto.presentation.UploadImageViewModel
+import com.example.fiopreto.presentation.ViewState
 import kotlinx.android.synthetic.main.upload_image.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import java.io.ByteArrayOutputStream
@@ -40,15 +41,22 @@ class UploadFeedActivity : AppCompatActivity() {
             }
         }
 
+        viewModel.uploadImageListLiveData.observe(
+            this, {
+                when (it.state) {
+
+                    ViewState.State.SUCCESS -> finish()
+                    ViewState.State.ERROR -> Toast.makeText(this, "Erro ao tentar enviar a imagem!", Toast.LENGTH_SHORT).show()
+                    //LOADING -> onLoading(it.isLoading)
+                }
+            })
+
         upload_feed.setOnClickListener {
             viewModel.uploadImageFeed()
 
 
         }
 
-        save_feed.setOnClickListener {
-            finish()
-        }
     }
     /*
     private fun uploadImage() {
